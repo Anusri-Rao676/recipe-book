@@ -42,6 +42,7 @@ app.post("/signup", async (req, res)=>{
         data.password = hashedPassword;
     const userdata = await collection.insertMany(data);
     console.log(userdata);
+    res.render("recipe.ejs", { username: req.body.username });
     }
 });
 
